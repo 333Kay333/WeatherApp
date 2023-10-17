@@ -14,9 +14,77 @@
     <title>Kay's Weather</title>  
   </head>
 <body>
-  <div class="container">
-    <h1>`sup</h1>
+  
+  <div id="form" class="container"> 
+    <div class="weather-app-wrapper"></div>
+    <div class="weather-app">
+      <form id="search-form" class="mb-3">
+        <div class="row">
+          <div class="col-9">
+            <input
+              type="search"
+              placeholder="Type a city.."
+              class="form-control"
+              id="city-input"
+              autocomplete="off"
+            />
+          </div>
+          <div class="col-3">
+            <input
+              type="submit"
+              value="Search"
+              class="btn btn-success w-100"
+            />
+          </div>
+        </div>
+      </form>
+      <div class="overview">
+      <h1 id="city"></h1>  
+      <ul>
+        <li id="date-line">Last Updated: <span id="date"></span></li>
+        <li id="description"></li>
+      </ul>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="clearfix weather-temperature">
+          <img 
+          src="http://openweathermap.org/img/wn/04d@2x.png" 
+          alt="broken clouds"
+          id="icon" 
+          class="float-left"
+          />
+          <div class="float-left">
+          <strong id="temperature">12</strong>
+          <span class="units"> 
+            <a href="#" class="active" id="celsius-link">°C</a>|<a 
+            href="#"
+            id="fahrenheit-link"
+            class=""
+            >
+            °F</a>
+          </span>
+        </div>
+      </div>
+    </div>
+     <div id="elements" class="col-6">
+      <ul>
+        <li>Humidity: <span id="humidity" ></span>%</li>
+        <li>Wind: <span id="wind"></span>km/hr</li>
+      </ul>
+    </div>
   </div>
+    <div class="weather-forecast" id="forecast"></div>
+    </div>
+      <small id="link">
+      <a href="https://github.com/333Kay333/KayCode/tree/main" 
+      >open-source code</a>
+       by, Kay Beachy
+    </small>
+    </div>
+  </div>
+
+  
 </body>
 <script src="src/index.js"></script>
 </html>
