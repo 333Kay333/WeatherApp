@@ -11,16 +11,25 @@ background: linear-gradient( to right,#4ca2cd, #4ca2cd,
 
 
 h1 {
-  color: #878787;
+  color: rgb(41, 147, 173);
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
   margin-bottom: 0;
+  padding-left: 66px;
+}
+#last-update {
+  padding-left: 66px
+}
+
+.weather-temperature {
+  padding-left: 66px;
 }
 
 ul {
   margin: 0;
   padding: 0;
+  ;
 }
 
 li {
@@ -28,7 +37,7 @@ li {
   margin: 0;
   padding: 0;
 
-  color: rgb(135, 135, 135);
+  color: rgb(41, 147, 173);
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;

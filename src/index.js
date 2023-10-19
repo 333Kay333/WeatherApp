@@ -29,11 +29,12 @@ function formatDay(timestamp) {
   return days[day];
 }
 function displayForecast() {
+  let forecastDay = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecast = response.data.daily;
 
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  days.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
@@ -41,7 +42,7 @@ function displayForecast() {
         <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
         <img 
           id="forcast-img"
-          src="http://openweathermap.org/img/wn/50d@2x.png"
+          src="http://openweathermap.org/img/wn/#{forecastDay.weather[0].icon]@2x.png"
           alt=""
           width="42"
         />
@@ -70,8 +71,7 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
-  let celsiusTemperature = response.data.main.temp;
-
+  
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -99,15 +99,16 @@ function handleSubmit(event) {
 }
 
 
-
-
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-
-
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let city = "Grand Rapids"
 search(city);
